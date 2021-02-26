@@ -1,0 +1,9 @@
+<% for post in @shark.posts %>
+    <ul>
+        <li class="post">
+            <%= post.body %>
+            <%= button_tag "Remove Post", data: {controller: "posts", action: "posts#remove"} %>
+            <%= button_tag "Upvote", data: {controller: "posts", action: "posts#upvote"} %>
+        </li>
+    </ul>
+<% end %>
