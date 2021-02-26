@@ -1,21 +1,24 @@
-import {Controller} from  "stimulus"
-export default class extends Controller{
-    static targets = ['body', 'add', 'show']
+import { Controller } from "stimulus"
+
+export default class extends Controller {
+
+    static targets = ["body", "add", "show"]
+
     addBody() {
         let content = this.bodyTarget.value;
-        this.addTarget.insertAdjacentHTML('beforebegin', '<li>' + content + '</li>');
+        this.addTarget.insertAdjacentHTML('beforebegin', "<li>" + content + "</li>");
     }
 
-    showAll(){
-        this.showTarget.style.visibility = "visibility" = "visible";
+    showAll() {
+        this.showTarget.style.visibility = "visible";
     }
 
-    upvote(){
+    upvote() {
         let post = target.closest(".post");
-        post.insertAdjacentHTML('beforeend', '<i class="fa fa-check-circle"></i>')
+        post.insertAdjacentHTML('beforeend', '<i class="fa fa-check-circle"></i>');
     }
 
-    remove(){
+    remove() {
         let post = target.closest(".post");
         post.style.visibility = "hidden";
     }
