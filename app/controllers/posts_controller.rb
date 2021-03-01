@@ -1,4 +1,4 @@
-class PostController < ApplicationController
+class PostsController < ApplicationController
     before_action :get_shark
 
     def create

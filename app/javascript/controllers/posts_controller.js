@@ -14,12 +14,17 @@ export default class extends Controller {
     }
 
     upvote() {
-        let post = target.closest(".post");
+        let post = event.target.closest(".post");
         post.insertAdjacentHTML('beforeend', '<i class="fa fa-check-circle"></i>');
     }
 
     remove() {
-        let post = target.closest(".post");
+        let post = event.target.closest(".post");
+        let posts = document.getElementsByTagName('ul');
         post.style.visibility = "hidden";
+        for (let u of posts){
+            if(u.children[0].style.visibility == 'hidden')
+                u.style.visibility = "hidden";
+        }
     }
 }
