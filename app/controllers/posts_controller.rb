@@ -17,6 +17,7 @@ class PostsController < ApplicationController
     end
 
     def post_params
+        pp params
         params.require(:post).permit(:body, :shark_id)
     end
 end

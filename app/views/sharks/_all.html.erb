@@ -1,11 +1,11 @@
 <% for post in @shark.posts  %>
-    <ul>
-
-        <li class="post">
-            <%= post.body %>
-            <%= button_tag "Remove Post", data: { controller: "posts", action: "posts#remove" } %>
-            <%= button_tag "Upvote Post", data: { controller: "posts", action: "posts#upvote" } %>
-        </li>
-
-    </ul>
+    <% if post.id != nil%>
+        <ul>
+            <li class="post">
+                <%= post.body %>
+                <%= link_to 'Destroy', shark_post_path(:shark_id => @shark.id, :id => post.id), method: :delete, data: { confirm: 'Are you sure?',controller: "posts", action: "posts#remove" } %>
+                <%= link_to "Upvote Post", data: { controller: "posts", action: "posts#upvote" } %>
+            </li>
+        </ul>
     <% end %>
+<% end %>
